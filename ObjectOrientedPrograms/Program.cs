@@ -7,24 +7,27 @@ namespace ObjectOrientedPrograms
     {
         static void Main(string[] agrs) 
         {
-
             List<Stock> stocks = new List<Stock>()
             {
-              new Stock()
-              {
-                Price = 10, Name = "Gold", nostocks  = 5, Symbol = "Gold.Pic"
+               new Stock()
+               {
+                  Price = 10, Name = "Bajaj", nostocks  = 5, Symbol = "Bajaj.Pic"
+               },
 
-              },
-
-              new Stock()
-              {
-                Name = "Sliver", Price = 20, Symbol = "Sliver.coc", nostocks = 10
-              }
+               new Stock()
+               {
+                   Name = "Flipkart", Price = 20, Symbol = "Flipkart.coc", nostocks = 10
+               },
 
             };
 
-             StockManagement management = new StockManagement();
-              management.CalutateTotalValue(stocks);
+
+            StockManagement stockManagement = new StockManagement(stocks);
+
+            stockManagement.CalutateTotalValue();
+            stockManagement.Buy(100, "Bajaj");
+            stockManagement.Sell(40, "Flipkart");
+            stockManagement.PrintReport(20, "Flipkart,Bajaj");
         }
 
 
